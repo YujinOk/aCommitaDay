@@ -66,3 +66,39 @@ const reverse = (str) => {
     return char + reversed;
   }, "");
 };
+
+// 2/11 HACKERRANK Flipping bits
+function flippingBits(n) {
+  // let y = n.toString(2).padStart(32, "0");
+  // let result = "";
+  // for (const char of y) {
+  //     result += char == "0" ? "1" : "0"; // invert bits
+  // }
+  // return parseInt(result, 2);
+  // Write your code here
+  // conver (n) -> binary 32 bits
+  const binary = n.toString(2);
+  let binaryNum = binary;
+
+  for (let i = 0; i < 32 - binary.length; i++) {
+    binaryNum = "0" + binaryNum;
+  }
+
+  let binarythiryTwo = binaryNum;
+  console.log(binarythiryTwo);
+
+  const flipNum = Array.from(binarythiryTwo)
+    .map((num) => {
+      if (num === "0") {
+        return "1";
+      }
+      return "0";
+    })
+    .join("");
+  console.log(flipNum);
+  // flip the binary 32 bit
+  const convertNum = parseInt(flipNum, 2);
+
+  // read as base 10
+  return convertNum;
+}
