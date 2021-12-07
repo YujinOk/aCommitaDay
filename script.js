@@ -102,3 +102,38 @@ function flippingBits(n) {
   // read as base 10
   return convertNum;
 }
+
+// 6/12 Monday Codewars Simple sum of pairs
+function solve(n){
+  let str = n + '',
+      a = '9'.repeat(str.length - 1)*1,
+      b = n - a
+  return ('' + a + b).split('').reduce((c, d) => +c + +d)
+
+}
+
+// Define the Problem
+// Come up with Solutions
+// Do Your Research but Don’t Reinvent the Wheel
+// Think About and Choose a Solution
+// Take Action
+// Hit Singles
+// Respect Your Time
+
+// 7/12 HackerRank Diagonal Difference 
+function diagonalDifference(matrix) {
+  // length of input matrix.
+   const length = matrix.length;
+   let diagonal1 = 0, diagonal2 = 0;
+ 
+   // Looping through the array and summing the diagonals.
+   for(let i = 0; i < length; i++){
+     // Calculating the primary diagonal.
+       diagonal1 += matrix[i][i];
+     // Reversing the second dimension of array to calculate secondary diagonal.
+       diagonal2 += matrix[length -1 - i][i]
+   }
+   // return absolute difference value.
+   return Math.abs(diagonal1 - diagonal2);  
+
+}
